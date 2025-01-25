@@ -5,17 +5,25 @@ var ulEl = document.getElementById("ul-el")
 
 console.log(ulEl)
 
-inputBtn.addEventListener("click", function() {
+inputBtn.addEventListener("click", renderLeads)
+inputBtn.addEventListener("click", function(){
+    document.getElementById("input-el").value=""
+})
+
+function renderLeads(){
     myLeads.push(inputEl.value)
     console.log(inputEl.value)
     var listItems = ""
     for (var i = 0; i < myLeads.length; i++) {
-        listItems += "<li>" + myLeads[i]
+        listElement = myLeads[i]
+        listItems += `<li>
+        <a href=
+        ${listElement}>
+        ${listElement}`
     }
-    console.log(myLeads)
     ulEl.innerHTML=listItems
     console.log(ulEl.innerHTML)
- })
+ }
 
 
 
